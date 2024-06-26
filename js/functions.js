@@ -1,4 +1,4 @@
-//* Task #1 //*
+//* Task #1 Проверка строки на кол-во символов //*
 
 
 const checkString = (string, maxString) => {
@@ -16,7 +16,7 @@ checkString('проверяемая строка', 18); // true
 // Строка длиннее 10 символов
 checkString('проверяемая строка', 10); // false
 
-/* Task #2 */
+/* Task #2 проверка строки на палиндром */
 
 const isPalindrom = (string) => {
   const cleaned = string.toLowerCase().replaceAll(' ', '');
@@ -35,4 +35,25 @@ isPalindrom('ДовОд'); // true
 isPalindrom('Кекс'); // false
 
 
-/*   Доп. задания не сделал, хоть основные сдать, не могу уже((   */
+/*  Task #3 проверка строки на наличие в ней чисел 0-9 и вывод чисел в консоль.   */
+
+
+function checkStringNumber(string) {
+  let result = '';
+
+  for (let i = 0; i < string.length; i++) {
+    const currentChar = parseInt(string[i], 10);
+
+    if (!Number.isNaN(currentChar)) {
+      result += string[i];
+    }
+  }
+
+  return parseInt(result, 10) || NaN;
+}
+
+// console.log(checkStringNumber('2023 год')); //2023
+// console.log(checkStringNumber('ECMAScript 2022')); //2022
+// console.log(checkStringNumber('1 кефир, 0.5 батона')); //105
+// console.log(checkStringNumber('агент 007')); //7
+// console.log(checkStringNumber('а я томат')); //NaN
