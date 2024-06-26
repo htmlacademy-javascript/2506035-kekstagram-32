@@ -52,6 +52,7 @@ function checkStringNumber(string) {
   return parseInt(result, 10) || NaN;
 }
 
+checkStringNumber();
 // console.log(checkStringNumber('2023 год')); //2023
 // console.log(checkStringNumber('ECMAScript 2022')); //2022
 // console.log(checkStringNumber('1 кефир, 0.5 батона')); //105
