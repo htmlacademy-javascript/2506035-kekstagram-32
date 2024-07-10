@@ -57,3 +57,27 @@ checkStringNumber('2024');
 // console.log(checkStringNumber(2023)); // 2023
 // console.log(checkStringNumber(-1)); // 1
 // console.log(checkStringNumber(1.5)); // 15
+
+//   Task 11 # Функция проверки времени на разрешенный диапазон    //
+
+function timeToMinutes(time) {
+  const [hour, minutes] = time.split(':');
+  const minutesInOneHour = 60;
+
+  return hour * minutesInOneHour + parseInt(minutes, 10);
+}
+
+function CheckTimeRange(startWorkDay, endWorkDay, metingStart, metingEnd) {
+  const startWorkDayMinutes = timeToMinutes(startWorkDay);
+  const endWorkDayMinutes = timeToMinutes(endWorkDay);
+  const metingStartMinutes = timeToMinutes(metingStart);
+
+  return metingStartMinutes >= startWorkDayMinutes &&
+  metingStartMinutes + metingEnd <= endWorkDayMinutes;
+}
+
+CheckTimeRange('08:00', '17:30', '14:00', 90); // true
+// console.log(CheckTimeRange('8:0', '10:0', '8:0', 120)); // true
+// console.log(CheckTimeRange('08:00', '14:30', '14:00', 90)); // false
+// console.log(CheckTimeRange('14:00', '17:30', '08:0', 90)); // false
+// console.log(CheckTimeRange('8:00', '17:30', '08:00', 900)); // false
