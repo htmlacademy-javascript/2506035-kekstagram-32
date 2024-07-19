@@ -62,9 +62,9 @@ checkStringNumber('2024');
 
 function timeToMinutes(time) {
   const [hour, minutes] = time.split(':');
-  const minutesInOneHour = 60;
+  const MINUTES_IS_ONE_HOUR = 60;
 
-  return hour * minutesInOneHour + parseInt(minutes, 10);
+  return hour * MINUTES_IS_ONE_HOUR + parseInt(minutes, 10);
 }
 
 function CheckTimeRange(startWorkDay, endWorkDay, metingStart, metingEnd) {
