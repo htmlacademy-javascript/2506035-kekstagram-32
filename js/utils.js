@@ -19,8 +19,11 @@ const createIdGenerator = () => {
 
 const generateRandomId = createIdGenerator();
 
+const ESCAPE__KEY = 'Escape';
+
 export{ getRandomArrayElement,
   getRandomInteger,
   generateRandomId,
-  createIdGenerator
+  createIdGenerator,
+  ESCAPE__KEY
 };
