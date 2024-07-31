@@ -22,27 +22,32 @@ const createComment = ({ avatar, message }) => {
   return comment;
 };
 
-const renderComments = () => {
+function calculateShownComments() {
   commentsShown += COMMENTS_PER_PAGE;
 
   if (commentsShown >= comments.length) {
-    commentsLoaderElement.classList.add('hidden');
     commentsShown = comments.length;
-  } else {
-    commentsLoaderElement.classList.remove('hidden');
   }
 
+  return commentsShown;
+}
+
+function renderComments() {
+  const shownComments = calculateShownComments();
+
+  commentsLoaderElement.classList.toggle('hidden', shownComments >= comments.length);
+
   const fragment = document.createDocumentFragment();
-  for (let i = 0; i < commentsShown; i++) {
+  for (let i = 0; i < shownComments; i++) {
     const comment = createComment(comments[i]);
     fragment.append(comment);
   }
 
   commentListElement.innerHTML = '';
   commentListElement.append(fragment);
-  commentShownCountElement.textContent = commentsShown;
+  commentShownCountElement.textContent = shownComments;
   commentTotalCountElement.textContent = comments.length;
-};
+}
 
 const hideBigPicture = () => {
   bigPictureElement.classList.add('hidden');
