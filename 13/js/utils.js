@@ -23,6 +23,6 @@ const ESCAPE__KEY = 'Escape';
 
 export {
   showAlert,
-  ESCAPE__KEY,
-  debounce
+  debounce,
+  ESCAPE__KEY
 };
