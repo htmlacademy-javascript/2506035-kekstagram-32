@@ -1,4 +1,4 @@
-import { ESCAPE__KEY } from './utils';
+import { ESCAPE__KEY } from './utils.js';
 
 const COMMENTS_PER_PAGE = 5;
 
