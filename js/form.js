@@ -1,5 +1,5 @@
-import { ESCAPE__KEY } from './utils';
-import { resetScale } from './scale';
+import { ESCAPE__KEY } from './utils.js';
+import { resetScale } from './scale.js';
 import {
   init as initEffect,
   reset as resetEffect
