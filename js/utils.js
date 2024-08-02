@@ -11,9 +11,18 @@ const showAlert = () => {
   }, ALERT_SHOW_TIME);
 };
 
+const debounce = (callback, timeoutDelay = 5000) => {
+  let timeoutId;
+  return (...rest) => {
+    clearTimeout(timeoutId);
+    timeoutId = setTimeout(() => callback.apply(this, rest), timeoutDelay);
+  };
+};
+
 const ESCAPE__KEY = 'Escape';
 
 export {
   showAlert,
+  debounce,
   ESCAPE__KEY
 };
