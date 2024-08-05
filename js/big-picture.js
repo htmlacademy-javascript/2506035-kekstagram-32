@@ -1,4 +1,4 @@
-import { ESCAPE__KEY } from './utils.js';
+import { CLOSE_BUTTON_WINDOW } from './utils.js';
 
 const COMMENTS_PER_PAGE = 5;
 
@@ -58,7 +58,7 @@ const hideBigPicture = () => {
 };
 
 function onDocumentKeydown(evt) {
-  if (evt.key === ESCAPE__KEY) {
+  if (evt.key === CLOSE_BUTTON_WINDOW) {
     evt.preventDefault();
     hideBigPicture();
   }

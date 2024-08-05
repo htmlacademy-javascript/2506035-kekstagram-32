@@ -1,4 +1,4 @@
-import { ESCAPE__KEY } from './utils.js';
+import { CLOSE_BUTTON_WINDOW } from './utils.js';
 import { resetScale } from './scale.js';
 import {
   init as initEffect,
@@ -84,7 +84,7 @@ const hasUniqueTags = (value) => {
 };
 
 function onDocumentKeyDown(evt) {
-  if (evt.key === ESCAPE__KEY && !isTextFieldFocused() && !isErrorMessageShown()) {
+  if (evt.key === CLOSE_BUTTON_WINDOW && !isTextFieldFocused() && !isErrorMessageShown()) {
     evt.preventDefault();
     hideModal();
   }
