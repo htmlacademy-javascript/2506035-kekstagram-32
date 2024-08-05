@@ -6,7 +6,7 @@ import {
 } from './effect.js';
 
 const MAX_HASHTAG_COUNT = 5;
-const VALID_SYMBOLS = /^#[a-za-яё0-9]{1,19}$/i;
+const VALID_SYMBOLS = /^#[a-zа-яё0-9]{1,19}$/i;
 const FILE_TYPES = ['jpg', 'jpeg', 'png'];
 const ErrorText = {
   INVALID_COUNT: `Максимум ${MAX_HASHTAG_COUNT} хэштегов`,
@@ -26,7 +26,7 @@ const fileField = form.querySelector('.img-upload__input');
 const hashtagField = form.querySelector('.text__hashtags');
 const commentField = form.querySelector('.text__description');
 const submitButton = form.querySelector('.img-upload__submit');
-const photoPreview = form.querySelector('.img-upload__preview');
+const photoPreview = form.querySelector('.img-upload__preview img');
 const effectsPreview = form.querySelectorAll('.effects__preview');
 
 const pristine = new Pristine(form, {
