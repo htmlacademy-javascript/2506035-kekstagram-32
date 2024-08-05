@@ -1,5 +1,5 @@
 const ALERT_SHOW_TIME = 5000;
-
+const CLOSE_BUTTON_WINDOW = 'Escape';
 const dataErrorTemplate = document.querySelector('#data-error').content.querySelector('.data-error');
 
 const showAlert = () => {
@@ -19,10 +19,8 @@ const debounce = (callback, timeoutDelay = 500) => {
   };
 };
 
-const ESCAPE__KEY = 'Escape';
-
 export {
   showAlert,
   debounce,
-  ESCAPE__KEY
+  CLOSE_BUTTON_WINDOW
 };
