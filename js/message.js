@@ -1,4 +1,4 @@
-import { ESCAPE__KEY } from './utils.js';
+import { CLOSE_BUTTON_WINDOW } from './utils.js';
 
 const successMessage = document.querySelector('#success').content.querySelector('.success');
 const errorMessage = document.querySelector('#error').content.querySelector('.error');
@@ -22,7 +22,7 @@ function onBodyClick(evt) {
 }
 
 function onDocumentKeydown(evt) {
-  if (evt.key === ESCAPE__KEY) {
+  if (evt.key === CLOSE_BUTTON_WINDOW) {
     evt.preventDefault();
     hideMessage();
   }
